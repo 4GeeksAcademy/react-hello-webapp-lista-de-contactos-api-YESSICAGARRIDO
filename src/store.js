@@ -1,5 +1,8 @@
 export const initialStore=()=>{
   return{
+    contactos: [],
+
+    
     message: null,
     todos: [
       {
@@ -18,6 +21,16 @@ export const initialStore=()=>{
 
 export default function storeReducer(store, action = {}) {
   switch(action.type){
+    case 'añadir_contactos':
+
+      const { contactos} = action.payload
+
+      return {
+        ...store,
+        contactos : contactos
+      };
+      
+
     case 'add_task':
 
       const { id,  color } = action.payload
